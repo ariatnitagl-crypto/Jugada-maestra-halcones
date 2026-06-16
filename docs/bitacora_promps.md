@@ -1,5 +1,22 @@
-Bitácora de Prompt Engineering - Proyecto Jugada Maestra
-Prompt 1 (Ideación): "Actúa como consultor senior. Analiza los dolores de Don Rafa en el club Los Halcones y genera un documento de requerimientos funcionales.
-"Prompt 2 (Prototipado): "Genera un dashboard administrativo en Stitch con KPIs de ingresos, tablas de pagos con etiquetas de color y gráficos de asistencia por categoría.
-"Prompt 3 (Backend): "Crea un servidor en Python con FastAPI y SQLAlchemy que gestione las tablas de Jugadores, Pagos y Asistencia, incluyendo endpoints para comparar ingresos mensuales.
-"Prompt 4 (Iteración/Error): "Tengo un error de sintaxis en app.js y un error de CORS. Ajusta el código para que un archivo local pueda consultar la API de FastAPI de forma segura.
+Bitácora de Prompt Engineering: Proyecto "Jugada Maestra"
+Asignatura: Sistemas de Información
+Caso: Los Halcones del Barrio (Don Rafa)
+Herramientas Utilizadas: NotebookLM, Stitch, Google Gemini / Claude.
+1. Fase de Descubrimiento e Ideación (NotebookLM / LLM)
+Objetivo: Sintetizar los dolores del cliente y extraer requerimientos funcionales.
+Prompt Inicial:"Actúa como un Consultor Tecnológico Experto. Analiza el caso de 'Don Rafa', quien gestiona el club amateur 'Los Halcones del Barrio' usando una libreta manual. Basado en su historia, identifica los 4 pain points principales y genera una lista de 5 requerimientos funcionales críticos que debe tener una solución digital para resolver su desorden financiero y operativo."Prompt de Refinamiento (Iteración):"El análisis es correcto, pero necesito que el Dashboard sea el centro de la solución. Redacta los requerimientos funcionales de modo que respondan específicamente a estas tres preguntas: 1. Estado de morosidad, 2. Asistencia por categoría y 3. Comparativa de ingresos mensual. Asegúrate de incluir un rol para los padres de familia."
+2. Fase de Prototipado de Alta Fidelidad (Stitch)
+Objetivo: Diseñar una interfaz intuitiva para un usuario no tecnológico (Don Rafa).
+Prompt de Estructura:"Diseña un dashboard web en español para un administrador de club deportivo. Usa una paleta de colores profesional basada en verde esmeralda y gris oscuro. Debe incluir una barra lateral de navegación y tres tarjetas principales de KPI en la parte superior: Ingresos Totales, Asistencia Promedio y Jugadores Pendientes de Pago."Prompt de Detalle (Iteración):"El diseño se ve bien, pero la tabla de pagos necesita ser más visual. Agrega etiquetas (badges) de colores: Verde para 'Pagado' y Rojo para 'Pendiente'. Asegúrate de que el gráfico de asistencia compare las tres categorías (Infantil, Juvenil y Adulto) en un solo vistazo."
+3. Fase de Desarrollo de Backend (Python + FastAPI)
+Objetivo: Crear una API robusta y una base de datos relacional.
+Prompt de Arquitectura:"Actúa como un desarrollador Senior en Python. Crea una arquitectura de base de datos relacional usando SQLAlchemy para el club. Necesito las tablas: categorias, jugadores, pagos y asistencias. Define las relaciones de llave foránea correctamente. Genera también el código base de FastAPI con los modelos de datos."Prompt de Lógica de Negocio (Iteración):"Necesito un endpoint específico para la comparativa financiera. Escribe una función en FastAPI que calcule el total de ingresos del mes actual y el total del mes anterior, y que devuelva la diferencia porcentual. Los datos deben ser devueltos en formato JSON para ser consumidos por un frontend."
+4. Fase de Desarrollo de Frontend y Conexión (HTML/JS)
+Objetivo: Consumir la API y mostrar los datos de forma dinámica.
+Prompt de Interfaz:"Genera un archivo index.html usando Tailwind CSS que replique el diseño del dashboard de Don Rafa. Usa JavaScript vanilla con fetch para conectarte a una API local en http://127.0.0.1:8000. La página debe mostrar 'Cargando...' mientras recibe los datos del backend."
+5. Gestión de Errores y Refactorización (Iteración Crítica)
+Esta sección es vital para demostrar que el equipo trabajó en los problemas técnicos.
+Prompt para Solución de Errores (CORS):"Mi frontend en file:// no puede obtener datos de mi backend en FastAPI debido a un error de política CORS. Modifica el archivo main.py para incluir el middleware de CORS permitiendo todos los orígenes, métodos y cabeceras, de modo que el desarrollo local sea fluido."Prompt para Corrección de Sintaxis:"Tengo un error 'Uncaught SyntaxError: missing ) after argument list' en mi archivo app.js al intentar renderizar la tabla de jugadores. Revisa el loop forEach y asegúrate de que las plantillas de cadena (template literals) y la concatenación de variables de estado de pago estén cerradas correctamente."
+6. Reflexión sobre el uso de IA
+La estrategia de prompting se centró en la asignación de roles (Consultor, Desarrollador Senior) y en la iteración incremental. No se buscó generar todo el código de una vez, sino construir piezas funcionales (Base de datos -> Endpoints -> Frontend) y utilizar la IA como un asistente de pair-programming para la resolución de errores específicos de integración y sintaxis.
+La estrategia de prompting se centró en la asignación de roles (Consultor, Desarrollador Senior) y en la iteración incremental. No se buscó generar todo el código de una vez, sino construir piezas funcionales (Base de datos -> Endpoints -> Frontend) y utilizar la IA como un asistente de pair-programming para la resolución de errores específicos de integración y sintaxis.
